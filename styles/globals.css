@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* GREEN-LED BRAND PALETTE (Light Mode Primary) */
+    --color-forest: #173F35;
+    --color-forest-dark: #0F2D26;
+    --color-ivory: #F5F1E8;
+    --color-sage: #DCE3D8;
+    --color-sand: #D8CDBB;
+    --color-charcoal: #242522;
+    --color-warm-white: #FCFAF6;
+    --color-brass: #A58B5F;
+
+    --background: 42 35% 94%;
+    /* #F5F1E8 Warm Ivory */
+    --foreground: 80 4% 14%;
+    /* #242522 Deep Charcoal */
+
+    --surface: 40 43% 98%;
+    /* #FCFAF6 Warm White */
+    --surface-foreground: 80 4% 14%;
+    /* #242522 */
+
+    --surface-muted: 98 16% 87%;
+    /* #DCE3D8 Soft Sage */
+    --surface-muted-foreground: 80 4% 28%;
+
+    --card: 40 43% 98%;
+    --card-foreground: 80 4% 14%;
+
+    --popover: 40 43% 98%;
+    --popover-foreground: 80 4% 14%;
+
+    --border: 37 27% 79%;
+    /* #D8CDBB Muted Sand */
+    --input: 37 27% 79%;
+
+    --muted: 80 3% 41%;
+    --muted-foreground: 80 3% 36%;
+
+    --accent: 165 47% 17%;
+    /* #173F35 Deep Forest Green */
+    --accent-foreground: 42 35% 94%;
+    /* #F5F1E8 Warm Ivory */
+
+    --brass: 38 29% 51%;
+    /* #A58B5F Muted Brass */
+
+    --ring: 165 47% 17%;
+    --radius: 0.875rem;
+  }
+
+  .dark {
+    /* Green-Led Architectural Dark Mode */
+    --background: 166 50% 12%;
+    /* #0F2D26 Dark Green */
+    --foreground: 42 35% 94%;
+    /* #F5F1E8 Warm Ivory */
+
+    --surface: 167 42% 13%;
+    /* #132F29 Deep Green Surface */
+    --surface-foreground: 42 35% 94%;
+    /* #F5F1E8 */
+
+    --surface-muted: 168 38% 17%;
+    /* #1A3B34 Muted Deep Surface */
+    --surface-muted-foreground: 98 16% 87%;
+    /* #DCE3D8 Soft Sage */
+
+    --card: 167 42% 13%;
+    --card-foreground: 42 35% 94%;
+
+    --popover: 167 42% 13%;
+    --popover-foreground: 42 35% 94%;
+
+    --border: 168 39% 22%;
+    --input: 168 39% 22%;
+
+    --muted: 98 16% 87%;
+    /* #DCE3D8 Soft Sage */
+    --muted-foreground: 132 8% 65%;
+
+    --accent: 98 16% 87%;
+    /* #DCE3D8 Soft Sage in dark mode */
+    --accent-foreground: 166 50% 12%;
+    /* #0F2D26 */
+
+    --brass: 38 29% 51%;
+    /* #A58B5F Muted Brass */
+
+    --ring: 38 29% 51%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+
+  /* Refined, quiet luxury scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Editorial hairline divider using theme border */
+  .hairline-divider {
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        hsl(var(--border)) 50%,
+        transparent 100%);
+  }
+
+  .hairline-divider-accent {
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        hsl(var(--accent) / 0.4) 50%,
+        transparent 100%);
+  }
+
+  /* Soft card shadows */
+  .shadow-soft {
+    box-shadow: 0 4px 20px -2px rgba(28, 28, 26, 0.05);
+  }
+
+  .shadow-soft-lg {
+    box-shadow: 0 10px 30px -4px rgba(28, 28, 26, 0.08);
+  }
+
+  .dark .shadow-soft {
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.3);
+  }
+
+  .dark .shadow-soft-lg {
+    box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Editorial clamp typography */
+  .text-display-hero {
+    font-size: clamp(2.5rem, 5.5vw + 1rem, 5.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+  }
+
+  .text-display-section {
+    font-size: clamp(2rem, 3.5vw + 0.5rem, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .text-display-sub {
+    font-size: clamp(1.25rem, 2vw + 0.25rem, 2rem);
+    line-height: 1.2;
+  }
+
+  /* Editorial Section Tone Backgrounds */
+  .bg-forest-deep {
+    background-color: #173F35;
+    color: #F5F1E8;
+  }
+
+  .bg-forest-dark {
+    background-color: #0F2D26;
+    color: #F5F1E8;
+  }
+
+  .bg-sage-surface {
+    background-color: #DCE3D8;
+    color: #242522;
+  }
+
+  .bg-sand-surface {
+    background-color: #D8CDBB;
+    color: #242522;
+  }
+
+  .bg-ivory-warm {
+    background-color: #F5F1E8;
+    color: #242522;
+  }
+
+  .dark .bg-sage-surface {
+    background-color: #1A3B34;
+    color: #F5F1E8;
+  }
+
+  .dark .bg-sand-surface {
+    background-color: #16362F;
+    color: #F5F1E8;
+  }
+
+  .dark .bg-ivory-warm {
+    background-color: #0F2D26;
+    color: #F5F1E8;
+  }
+
+  /* Touch minimum targets */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
