@@ -30,6 +30,10 @@ export function HeroCollectionSlideshow() {
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
 
+  // Mobile horizontal category chips auto-scroll refs
+  const mobileChipsContainerRef = useRef<HTMLDivElement>(null);
+  const mobileChipRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
   const totalSlides = HERO_COLLECTIONS.length;
   const displayedSlide: HeroCollectionSlide = HERO_COLLECTIONS[displayedIndex];
 
@@ -127,6 +131,23 @@ export function HeroCollectionSlideshow() {
 
     return () => clearInterval(timer);
   }, [speedMs, handleNext, isPaused]);
+
+  // Auto-scroll mobile category chips container to center the active category
+  useEffect(() => {
+    const container = mobileChipsContainerRef.current;
+    const activeChip = mobileChipRefs.current[activeIndex];
+    if (container && activeChip) {
+      const containerWidth = container.clientWidth;
+      const chipLeft = activeChip.offsetLeft;
+      const chipWidth = activeChip.clientWidth;
+      const targetScrollLeft = chipLeft - containerWidth / 2 + chipWidth / 2;
+
+      container.scrollTo({
+        left: Math.max(0, targetScrollLeft),
+        behavior: 'smooth',
+      });
+    }
+  }, [activeIndex]);
 
   return (
     <>
@@ -314,19 +335,19 @@ export function HeroCollectionSlideshow() {
             {/* Primary Explore Collection Button */}
             <Link
               href={displayedSlide.exploreRoute}
-              className="flex-1 h-9 px-3 rounded-xl bg-forest hover:bg-forest/90 dark:bg-sage dark:text-forest-dark text-ivory font-sans text-[11px] uppercase tracking-wider font-semibold shadow-soft active:scale-[0.98] transition-all flex items-center justify-center gap-1.5"
+              className="flex-1 h-9 px-3 rounded-xl bg-forest hover:bg-forest/90 dark:bg-sage dark:text-forest-dark text-ivory font-sans text-[11px] uppercase tracking-wider font-semibold shadow-soft active:scale-[0.98] transition-all flex items-center justify-center gap-1.5 whitespace-nowrap overflow-hidden"
             >
-              <span>Explore {displayedSlide.title}</span>
-              <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.2]" />
+              <span className="truncate">Explore</span>
+              <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.2] shrink-0" />
             </Link>
 
             {/* Enquire / Book Fitting */}
             <Link
               href="/contact"
-              className="flex-1 h-9 px-3 rounded-xl border border-border bg-background hover:bg-surface-muted text-foreground font-sans text-[11px] uppercase tracking-wider font-semibold shadow-2xs active:scale-[0.98] transition-all flex items-center justify-center gap-1.5"
+              className="flex-1 h-9 px-3 rounded-xl border border-border bg-background hover:bg-surface-muted text-foreground font-sans text-[11px] uppercase tracking-wider font-semibold shadow-2xs active:scale-[0.98] transition-all flex items-center justify-center gap-1.5 whitespace-nowrap overflow-hidden"
             >
-              <Calendar className="w-3.5 h-3.5 text-forest dark:text-sage" />
-              <span>Enquire</span>
+              <Calendar className="w-3.5 h-3.5 text-forest dark:text-sage shrink-0" />
+              <span className="truncate">Enquire</span>
             </Link>
 
             {/* Direct Phone Call Button */}
@@ -335,7 +356,7 @@ export function HeroCollectionSlideshow() {
               aria-label="Call Showroom"
               className="h-9 w-9 shrink-0 rounded-xl border border-border bg-background hover:bg-surface-muted flex items-center justify-center text-forest dark:text-sage transition-all active:scale-95 shadow-2xs"
             >
-              <Phone className="w-3.5 h-3.5" />
+              <Phone className="w-3.5 h-3.5 shrink-0" />
             </a>
           </div>
         </div>
@@ -345,18 +366,25 @@ export function HeroCollectionSlideshow() {
         {/* ======================================================================= */}
         <div className="shrink-0 mt-1.5 flex flex-col gap-1">
           {/* Quick Horizontal Collection Selector Chips */}
-          <div className="overflow-x-auto no-scrollbar -mx-3.5 px-3.5 flex items-center gap-1.5 py-0.5">
+          <div
+            ref={mobileChipsContainerRef}
+            className="relative overflow-x-auto no-scrollbar [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden -mx-3.5 px-3.5 flex items-center gap-1.5 py-0.5 scroll-smooth"
+          >
             {HERO_COLLECTIONS.map((slide, idx) => {
               const isActive = idx === activeIndex;
               return (
                 <button
                   key={slide.id}
+                  ref={(el) => {
+                    mobileChipRefs.current[idx] = el;
+                  }}
                   type="button"
                   onClick={() => handleSelect(idx)}
+                  aria-current={isActive ? 'true' : undefined}
                   className={cn(
-                    'shrink-0 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-sans font-medium transition-all cursor-pointer border min-h-[30px]',
+                    'shrink-0 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-sans font-medium transition-all cursor-pointer border min-h-[30px] whitespace-nowrap',
                     isActive
-                      ? 'bg-forest text-ivory dark:bg-sage dark:text-forest-dark border-transparent shadow-xs font-semibold'
+                      ? 'bg-forest text-ivory dark:bg-sage dark:text-forest-dark border-transparent shadow-xs font-semibold scale-[1.02]'
                       : 'bg-surface text-foreground/80 hover:bg-surface-muted border-border'
                   )}
                 >

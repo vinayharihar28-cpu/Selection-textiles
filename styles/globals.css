@@ -307,4 +307,15 @@
       rgba(8, 11, 10, 0.55) 100%
     );
   }
+
+  /* Clean scrollbar suppression for touch carousels and pill rails */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
