@@ -34,7 +34,7 @@ export const EDITORIAL_COLLECTIONS: CollectionCardData[] = [
     pill: 'TEXTILE ARCHIVE',
     title: 'Fabrics',
     description: 'Raymond, Siyarams, Linen Club, Mafatlal, Ramraj, Uthayam, and imported Italian worsted cloth.',
-    image: '/images/hero/fabrics.png',
+    image: '/images/hero/Fabrics.png',
     href: '#collection-fabrics',
     imagePosition: 'object-center',
   },

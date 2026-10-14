@@ -38,7 +38,7 @@ export const HERO_COLLECTIONS: HeroCollectionSlide[] = [
     subtitle: 'Raymond, Siyarams, Linen Club, Mafatlal, Ramraj, Uthayam & Italian Luxury Wool & Linen Mills',
     description:
       'Four decades of direct mill partnerships. From pure French flax linens and Super 120s–150s Merino wools to authentic South Indian handlooms and imported Italian suitings.',
-    heroImage: '/images/hero/fabrics.png',
+    heroImage: '/images/hero/Fabrics.png',
     desktopPosition: '72% 52%',
     mobilePosition: '68% 60%',
     sectionId: 'collection-fabrics',
