@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Container } from '@/components/layout/container';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowUpRight, MapPin, Award, CheckCircle2, Users, Sparkles } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
 export function HeritageFoundersSection() {
   return (
@@ -33,7 +33,7 @@ export function HeritageFoundersSection() {
 
             {/* Narrative Paragraphs */}
             <p className="text-sm sm:text-base text-foreground/85 font-sans leading-relaxed">
-              In 1979, <strong className="text-foreground font-semibold">Sri Nakode S. Krishnan</strong> founded Selection Textiles on the historic trade artery of <strong className="text-foreground font-semibold">B.V.K. Iyengar Road, Bengaluru</strong>. Drawing upon deep, hands-on experience in textile suiting and shirting, he established the business on foundational principles: direct sourcing from India&apos;s finest mills, uncompromising cloth authenticity, and trusted, personal service for every patron.
+              In 1979, <strong className="text-foreground font-semibold">Sri Nakode S. Krishnan</strong> founded Selection Textiles in <strong className="text-foreground font-semibold">Bengaluru</strong>. Drawing upon deep, hands-on experience in textile suiting and shirting, he established the business on foundational principles: direct sourcing from India&apos;s finest mills, uncompromising cloth authenticity, and trusted, personal service for every patron.
             </p>
 
             <p className="text-sm sm:text-base text-foreground/85 font-sans leading-relaxed">
@@ -68,23 +68,19 @@ export function HeritageFoundersSection() {
               {/* Card Content */}
               <div className="flex flex-col flex-1 text-center sm:text-left justify-between h-full min-h-[190px]">
                 <div>
-                  <div className="inline-flex items-center gap-1.5 text-xs font-sans text-forest dark:text-sage font-semibold uppercase tracking-wider mb-1">
-                    <Award className="w-3.5 h-3.5" />
-                    <span>Founder & Visionary Merchant</span>
+                  <div className="text-xs font-sans text-forest dark:text-sage font-semibold uppercase tracking-wider mb-1">
+                    Founder & Visionary Merchant
                   </div>
                   <h3 className="font-serif text-xl sm:text-2xl text-foreground font-medium">
                     Mr. Nakode S. Krishnan
                   </h3>
                   <p className="text-xs font-sans text-muted leading-relaxed mt-2.5">
-                    Pioneered Selection Textiles on B.V.K. Iyengar Road. Built four decades of trusted goodwill through direct mill relationships, uncompromised yardage integrity, and authentic suiting and shirting fabrics.
+                    Pioneered Selection Textiles in 1979. Built four decades of trusted goodwill through direct mill relationships, uncompromised yardage integrity, and authentic suiting and shirting fabrics.
                   </p>
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-border/60 dark:border-white/10 flex items-center justify-between text-[11px] font-sans text-muted">
-                  <span className="flex items-center gap-1">
-                    <MapPin className="w-3 h-3 text-forest dark:text-sage" />
-                    <span>B.V.K. Iyengar Rd</span>
-                  </span>
+                  <span>Established 1979</span>
                   <span className="font-medium text-foreground">
                     First Generation Founder
                   </span>
@@ -114,9 +110,8 @@ export function HeritageFoundersSection() {
               {/* Card Content */}
               <div className="flex flex-col flex-1 text-center sm:text-left justify-between h-full min-h-[190px]">
                 <div>
-                  <div className="inline-flex items-center gap-1.5 text-xs font-sans text-forest dark:text-sage font-semibold uppercase tracking-wider mb-1">
-                    <Sparkles className="w-3.5 h-3.5" />
-                    <span>Managing Partner & Director</span>
+                  <div className="text-xs font-sans text-forest dark:text-sage font-semibold uppercase tracking-wider mb-1">
+                    Managing Partner & Director
                   </div>
                   <h3 className="font-serif text-xl sm:text-2xl text-foreground font-medium">
                     Mr. Nakode K. Subramani
@@ -127,10 +122,7 @@ export function HeritageFoundersSection() {
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-border/60 dark:border-white/10 flex items-center justify-between text-[11px] font-sans text-muted">
-                  <span className="flex items-center gap-1">
-                    <Users className="w-3 h-3 text-forest dark:text-sage" />
-                    <span>B.Com • Commercial Lead</span>
-                  </span>
+                  <span>B.Com • Commercial Lead</span>
                   <span className="font-medium text-foreground">
                     Second Generation Leadership
                   </span>
