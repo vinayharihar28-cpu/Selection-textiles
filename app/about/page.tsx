@@ -22,7 +22,7 @@ function FounderCard({ src, alt, name, role, copy }: { src: string; alt: string;
   return (
     <article className="overflow-hidden rounded-3xl border border-border bg-surface shadow-soft-lg">
       <div className="relative aspect-[4/5] overflow-hidden bg-surface-muted">
-        <Image src={src} alt={alt} fill priority sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-top" />
+        <Image src={src} alt={alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-top" />
       </div>
       <div className="border-t border-border p-6 sm:p-7">
         <span className="text-[10px] font-semibold uppercase tracking-[0.17em] text-accent">{role}</span>

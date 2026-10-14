@@ -15,7 +15,6 @@ import { cn } from '@/lib/utils';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -26,10 +25,6 @@ export function Header() {
       const scrollY = window.scrollY;
       setIsScrolled(scrollY > 20);
 
-      const winHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (winHeight > 0) {
-        setScrollProgress((scrollY / winHeight) * 100);
-      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -176,13 +171,6 @@ export function Header() {
           </div>
         </div>
 
-        {/* Dynamic Scroll Progress Bar (Only visible when scrolled) */}
-        {isScrolled && (
-          <div
-            className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-brass via-forest to-sage dark:from-brass dark:via-sage dark:to-brass transition-all duration-150 ease-out opacity-80"
-            style={{ width: `${Math.min(100, Math.max(0, scrollProgress))}%` }}
-          />
-        )}
       </header>
 
       {/* Mobile Navigation Drawer */}
