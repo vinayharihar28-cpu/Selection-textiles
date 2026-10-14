@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Cormorant_Garamond, Outfit } from 'next/font/google';
+import { Cormorant_Garamond, DM_Sans } from 'next/font/google';
 import '@/styles/globals.css';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { Header } from '@/components/layout/header';
@@ -13,9 +13,9 @@ const cormorant = Cormorant_Garamond({
   display: 'swap',
 });
 
-const outfit = Outfit({
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-sans',
   display: 'swap',
 });
@@ -56,8 +56,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/images/Logo/Logo.png',
-        width: 2172,
-        height: 724,
+        width: 2067,
+        height: 761,
         alt: 'Selection Textiles Bengaluru',
       },
     ],
@@ -84,7 +84,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${cormorant.variable} ${outfit.variable} scroll-smooth`}
+      className={`${cormorant.variable} ${dmSans.variable} scroll-smooth`}
     >
       <body className="font-sans antialiased bg-background text-foreground min-h-screen flex flex-col selection:bg-accent selection:text-accent-foreground">
         <ThemeProvider

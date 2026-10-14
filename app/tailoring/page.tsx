@@ -177,7 +177,7 @@ export default function TailoringPage() {
               </span>
               <span className="flex items-center gap-1.5 text-foreground">
                 <Phone className="w-3.5 h-3.5 text-accent" />
-                +91-98446 75222 / 080-22258982
+                +91-86604 51300 / 080-22258982 / 080-41264992
               </span>
             </div>
           </div>

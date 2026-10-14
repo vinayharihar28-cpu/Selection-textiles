@@ -112,7 +112,7 @@ const config: Config = {
       },
       fontFamily: {
         serif: ['var(--font-serif)', 'Cormorant Garamond', 'Georgia', 'serif'],
-        sans: ['var(--font-sans)', 'Outfit', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-sans)', 'DM Sans', 'system-ui', 'sans-serif'],
       },
       letterSpacing: {
         'tight-editorial': '-0.02em',

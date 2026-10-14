@@ -4,7 +4,7 @@
 .pnp.js
 .yarn/install-state.gz
 
-# Next.js build output
+# Next.js 
 /.next/
 /out/
 

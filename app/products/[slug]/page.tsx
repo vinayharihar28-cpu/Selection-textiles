@@ -1,11 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Section } from '@/components/layout/section';
 import { Button } from '@/components/ui/button';
 import { BackButton } from '@/components/ui/back-button';
 import { Shield, Clock, Ruler } from 'lucide-react';
 import { getProductBySlug } from '@/lib/data/products';
-import { Product3DViewer } from '@/components/3d/Product3DViewer';
 
 interface Props {
   params: {
@@ -36,17 +36,23 @@ export default function ProductSlugPage({ params, searchParams }: Props) {
           <BackButton href="/collections" ariaLabel="Back to Collections" />
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
-          {/* Left: Garment Visual / Production 3D Viewer */}
+          {/* Left: High-Resolution Garment Photography */}
           <div className="lg:col-span-7 flex flex-col gap-3">
-            <Product3DViewer
-              modelUrl={product.modelUrl}
-              imageUrl={product.heroImage.url}
-              imageAlt={product.heroImage.alt || product.name}
-              productName={product.name}
-              aspectRatioClass="aspect-[3/4] lg:aspect-auto lg:h-[calc(100vh-235px)] lg:max-h-[640px] lg:min-h-[460px]"
-              craftsmanshipTag={product.construction}
-              category={product.category.replace(/_/g, ' ')}
-            />
+            <div className="relative aspect-[3/4] lg:aspect-auto lg:h-[calc(100vh-235px)] lg:max-h-[640px] lg:min-h-[460px] w-full rounded-2xl overflow-hidden border border-border bg-black/5 shadow-soft">
+              <Image
+                src={product.heroImage.url}
+                alt={product.heroImage.alt || product.name}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                className="object-cover object-center"
+              />
+              <div className="absolute top-4 left-4 z-10">
+                <span className="px-3 py-1 rounded-full text-[10px] uppercase tracking-widest font-sans font-bold bg-white/90 dark:bg-black/80 backdrop-blur-md text-forest dark:text-sage border border-white/40 shadow-xs">
+                  {product.construction}
+                </span>
+              </div>
+            </div>
 
             <div className="grid grid-cols-3 gap-2.5 text-center text-xs font-sans">
               <div className="p-2.5 rounded-xl border border-border bg-surface shadow-soft">

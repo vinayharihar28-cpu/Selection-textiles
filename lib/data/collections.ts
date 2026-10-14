@@ -4,7 +4,7 @@ export interface CollectionCategory {
   slug: string;
   aliases?: string[];
   title: string;
-  group: 'Tailoring & Menswear' | 'Fabrics & Casualwear' | 'Corporate';
+  group: 'Bespoke Tailoring' | 'Wedding Collections' | 'Indo-Western' | 'Fabrics & Casualwear' | 'Corporate';
   subtitle: string;
   season: string;
   itemsCount: number;
@@ -25,11 +25,11 @@ export const COLLECTIONS_DATA: CollectionCategory[] = [
     slug: 'suits-blazers',
     aliases: ['bespoke-suits', 'tailored-blazers', 'suits', 'blazers'],
     title: 'Suits & Blazers',
-    group: 'Tailoring & Menswear',
+    group: 'Bespoke Tailoring',
     subtitle: 'Full-canvas western tailoring, two-piece suits, three-piece sets, and double-breasted blazers',
     season: 'All-Season Sartorial',
     itemsCount: 16,
-    category: 'Tailoring & Menswear',
+    category: 'Bespoke Tailoring',
     imageUrl: VISUAL_ASSETS['col-suits-blazers'].url,
     localImagePath: VISUAL_ASSETS['col-suits-blazers'].localPath,
     description:
@@ -42,11 +42,11 @@ export const COLLECTIONS_DATA: CollectionCategory[] = [
     slug: 'sherwanis',
     aliases: ['regal-sherwanis'],
     title: 'Sherwanis',
-    group: 'Tailoring & Menswear',
+    group: 'Wedding Collections',
     subtitle: 'Traditional occasionwear and made-to-measure ceremonial attire',
     season: 'Ceremonial & Occasionwear',
     itemsCount: 12,
-    category: 'Tailoring & Menswear',
+    category: 'Wedding & Occasionwear',
     imageUrl: VISUAL_ASSETS['col-sherwanis'].url,
     localImagePath: VISUAL_ASSETS['col-sherwanis'].localPath,
     description:
@@ -59,11 +59,11 @@ export const COLLECTIONS_DATA: CollectionCategory[] = [
     slug: 'shirts-trousers',
     aliases: ['formal-shirts-trousers'],
     title: 'Shirts & Trousers',
-    group: 'Tailoring & Menswear',
+    group: 'Bespoke Tailoring',
     subtitle: 'Formal menswear, made-to-measure fitting, and coordinated shirt & trouser styling',
     season: 'Permanent Formal Wardrobe',
     itemsCount: 20,
-    category: 'Tailoring & Menswear',
+    category: 'Bespoke Tailoring',
     imageUrl: VISUAL_ASSETS['col-shirts-trousers'].url,
     localImagePath: VISUAL_ASSETS['col-shirts-trousers'].localPath,
     description:
@@ -76,11 +76,11 @@ export const COLLECTIONS_DATA: CollectionCategory[] = [
     slug: 'modi-coats-jackets',
     aliases: ['modi-coats', 'coats', 'jackets', 'coats-jackets'],
     title: 'Modi Coats & Jackets',
-    group: 'Tailoring & Menswear',
-    subtitle: 'Classic stand collar waistcoats, Modi coats, and made-to-measure jackets',
-    season: 'Heritage Formal',
+    group: 'Indo-Western',
+    subtitle: 'Modi coats, Bandhgala jackets, and heritage layers with a contemporary silhouette',
+    season: 'Indo-Western Edit',
     itemsCount: 14,
-    category: 'Tailoring & Menswear',
+    category: 'Indo-Western',
     imageUrl: VISUAL_ASSETS['col-modi-coats-jackets'].url,
     localImagePath: VISUAL_ASSETS['col-modi-coats-jackets'].localPath,
     description:
@@ -93,11 +93,11 @@ export const COLLECTIONS_DATA: CollectionCategory[] = [
     slug: 'waistcoats',
     aliases: ['tailored-waistcoats'],
     title: 'Waistcoats',
-    group: 'Tailoring & Menswear',
-    subtitle: 'Formal and occasionwear tailoring cut for a crisp contoured silhouette',
-    season: 'Formal & Occasionwear',
+    group: 'Wedding Collections',
+    subtitle: 'Wedding and occasion waistcoats cut for a crisp, contoured silhouette',
+    season: 'Wedding & Occasionwear',
     itemsCount: 10,
-    category: 'Tailoring & Menswear',
+    category: 'Wedding & Occasionwear',
     imageUrl: VISUAL_ASSETS['col-waistcoats'].url,
     localImagePath: VISUAL_ASSETS['col-waistcoats'].localPath,
     description:
@@ -110,11 +110,11 @@ export const COLLECTIONS_DATA: CollectionCategory[] = [
     slug: 'mens-kurta-pyjama',
     aliases: ['kurta-pyjama'],
     title: "Men's Kurta Pyjama",
-    group: 'Tailoring & Menswear',
-    subtitle: 'Traditional and occasionwear tailoring collection cut for grace and comfort',
-    season: 'Traditional & Festive',
+    group: 'Wedding Collections',
+    subtitle: 'Traditional kurta pyjama ensembles for weddings, festivities, and celebrations',
+    season: 'Wedding & Festive',
     itemsCount: 12,
-    category: 'Tailoring & Menswear',
+    category: 'Wedding & Occasionwear',
     imageUrl: VISUAL_ASSETS['col-mens-kurta-pyjama'].url,
     localImagePath: VISUAL_ASSETS['col-mens-kurta-pyjama'].localPath,
     description:

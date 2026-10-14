@@ -6,9 +6,9 @@ import { Badge } from '@/components/ui/badge';
 import { Box, Eye, ArrowUpRight, MapPin, Phone, Layers, Scissors } from 'lucide-react';
 
 export const metadata = {
-  title: 'Digital & Physical Showroom | Selection Textiles Bengaluru',
+  title: 'Showroom & Atelier | Selection Textiles Bengaluru',
   description:
-    'Experience the showroom of Selection Textiles Bengaluru. Established in 1979 on B.V.K. Iyengar Road. Explore interactive 3D garment visualization and made-to-measure tailoring.',
+    'Experience the historic showroom of Selection Textiles Bengaluru. Established in 1979 on B.V.K. Iyengar Road. Made-to-measure tailoring, fine cloth archives, and bespoke consultation.',
 };
 
 export default function ShowroomPage() {
@@ -18,19 +18,18 @@ export default function ShowroomPage() {
       <Section
         variant="muted"
         eyebrow="Selection Textiles • Bengaluru Showroom"
-        title="The Digital & Physical Showroom."
-        description="Bridging more than four decades of physical textile mastery with contemporary digital visualization. Explore garments in real-time 3D or visit our Bengaluru showroom."
+        title="The Bengaluru Showroom & Atelier."
+        description="More than four decades of fabric mastery and made-to-measure tailoring on B.V.K. Iyengar Road. Explore running bolt archives or schedule a private fitting consultation."
       >
         <div className="flex flex-wrap items-center gap-3">
-          <Link href="/products/bespoke-suits-model-one">
-            <Button variant="primary" size="sm" className="gap-2 shadow-soft">
-              <Eye className="w-4 h-4 text-accent-foreground" />
-              <span>Launch 3D Suit Studio</span>
+          <Link href="/collections">
+            <Button variant="primary" size="sm">
+              Explore Collections
             </Button>
           </Link>
-          <Link href="/collections">
+          <Link href="/fabrics">
             <Button variant="outline" size="sm">
-              Explore Collections
+              Fabric Archives
             </Button>
           </Link>
           <Link href="/contact">
@@ -41,38 +40,37 @@ export default function ShowroomPage() {
         </div>
       </Section>
 
-      {/* 3D Garment Studio Feature Stage */}
+      {/* Atelier Feature Stage */}
       <Section variant="default">
         <div className="relative aspect-[16/9] min-h-[440px] rounded-3xl border border-accent/40 bg-surface-muted flex flex-col items-center justify-center text-center p-8 overflow-hidden shadow-soft">
           <div className="relative z-10 max-w-xl flex flex-col items-center">
             <div className="w-16 h-16 rounded-2xl border border-accent/40 bg-surface flex items-center justify-center text-accent mb-5 shadow-soft">
-              <Box className="w-8 h-8 animate-pulse" />
+              <Box className="w-8 h-8" />
             </div>
 
             <Badge variant="accent" size="sm" className="mb-3">
-              Interactive 3D Stage
+              Bespoke Fitting Atelier
             </Badge>
 
             <h2 className="font-serif text-3xl sm:text-4xl text-foreground font-light mb-3">
-              3D Garment Visualization
+              Craftsmanship & Made-to-Measure
             </h2>
 
             <p className="text-xs sm:text-sm text-muted font-sans mb-6 leading-relaxed">
-              Experience the bespoke 3D garment studio powered by client-side WebGL. Rotate 360 degrees, inspect lapel roll, and examine garment balance before commissioning your made-to-measure piece.
+              Experience personalized tailoring consultations with our master cutters. Inspect cloth rolls in natural light, assess shoulder structure, and commission custom suits, kurtas, or corporate uniforms.
             </p>
 
-            <Link href="/products/bespoke-suits-model-one" className="mb-6">
+            <Link href="/contact" className="mb-6">
               <Button variant="primary" size="md" className="gap-2 shadow-soft">
-                <Eye className="w-4 h-4 text-accent-foreground" />
-                <span>Experience Savile 6x2 Suit in 3D</span>
+                <span>Book In-Store Fitting</span>
                 <ArrowUpRight className="w-4 h-4" />
               </Button>
             </Link>
 
             <div className="flex flex-wrap items-center justify-center gap-3">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border bg-surface text-foreground text-xs font-sans shadow-soft">
-                <Eye className="w-3.5 h-3.5 text-accent" />
-                <span>360° Orbit Rotation</span>
+                <Scissors className="w-3.5 h-3.5 text-accent" />
+                <span>32 Anatomic Measurements</span>
               </div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border bg-surface text-foreground text-xs font-sans shadow-soft">
                 <Layers className="w-3.5 h-3.5 text-accent" />
@@ -104,7 +102,7 @@ export default function ShowroomPage() {
             </div>
             <div className="flex items-center gap-2 mt-2 text-xs font-sans text-muted">
               <Phone className="w-3.5 h-3.5 text-accent shrink-0" />
-              <span>+91-98446 75222 / +91-080-22258982</span>
+              <span>+91-86604 51300 / 080-22258982 / 080-41264992</span>
             </div>
           </div>
 

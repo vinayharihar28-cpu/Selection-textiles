@@ -16,8 +16,8 @@ export function Footer() {
               <Image
                 src="/images/Logo/Logo.png"
                 alt="Selection Textiles"
-                width={2172}
-                height={724}
+                width={2067}
+                height={761}
                 className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 hover:scale-[1.02]"
               />
               <span className="text-[10px] tracking-[0.25em] text-brass uppercase font-sans mt-1">
@@ -38,10 +38,18 @@ export function Footer() {
                   Karnataka, India
                 </p>
               </div>
-              <div className="flex items-center gap-2.5 text-ivory/80">
+              <div className="flex items-center gap-2.5 text-ivory/80 flex-wrap">
                 <Phone className="w-4 h-4 text-brass shrink-0" />
-                <a href="tel:+919844675222" className="hover:text-ivory transition-colors">
-                  +91-98446 75222 / 080-22258982
+                <a href="tel:+918660451300" className="hover:text-ivory transition-colors">
+                  +91-86604 51300
+                </a>
+                <span className="text-ivory/40">/</span>
+                <a href="tel:+9108022258982" className="hover:text-ivory transition-colors">
+                  080-22258982
+                </a>
+                <span className="text-ivory/40">/</span>
+                <a href="tel:+9108041264992" className="hover:text-ivory transition-colors">
+                  080-41264992
                 </a>
               </div>
               <div className="flex items-center gap-2.5 text-ivory/80">
@@ -143,8 +151,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/about" className="hover:text-ivory transition-colors">
+                  About Us (Est. 1979)
+                </Link>
+              </li>
+              <li>
                 <Link href="/heritage" className="hover:text-ivory transition-colors">
-                  Heritage Since 1979
+                  Heritage Timeline
                 </Link>
               </li>
               <li>

@@ -2,6 +2,48 @@ import { Product } from '@/types/product';
 import { getGarmentModelUrl, DEFAULT_MODEL_URL } from '@/config/models';
 import { VISUAL_ASSETS } from './assets';
 
+/** Additional Sherwani designs supplied outside the original 42-image catalogue. */
+function createSherwaniLookbookProducts(): Record<string, Product> {
+  const designs = [
+    ['sherwani-embroidered', 'Embroidered Sherwani', 'Embroidered ceremonial detailing', 'sherwani-embroidered.png'],
+    ['midnight-blue-beaded-tuxedo', 'Midnight Blue Beaded Tuxedo', 'Evening tuxedo with beaded detailing', 'midnight-blue-beaded-tuxedo.png'],
+    ['navy-gold-sherwani', 'Navy Gold Sherwani', 'Navy sherwani with gold detailing', 'navy-gold-sherwani.png'],
+    ['red-brocade-sherwani', 'Red Brocade Sherwani', 'Rich red brocade ceremonial sherwani', 'red-brocade-sherwani.png'],
+    ['elegant-sherwani-lobby', 'Elegant Sherwani', 'Refined sherwani for grand occasions', 'elegant-sherwani-lobby.png'],
+    ['princely-ivory-sherwani', 'Princely Ivory Sherwani', 'Ivory sherwani with regal finishing', 'princely-ivory-sherwani.png'],
+  ] as const;
+
+  return Object.fromEntries(
+    designs.map(([slug, name, subtitle, fileName], index) => [
+      slug,
+      {
+        id: `prod-sherwani-lookbook-${index + 3}`,
+        slug,
+        sku: `SEL-TEX-SHR-${String(index + 3).padStart(3, '0')}`,
+        name,
+        editorialTitle: 'Sherwani Lookbook',
+        subtitle,
+        division: 'ceremonial_heritage',
+        category: 'regal_sherwani',
+        price: { formattedDisplay: 'Price on Request / In-Store Visit', isCustomQuoteOnly: true },
+        shortDescription: 'Made-to-measure ceremonial tailoring with personalized fabric, finish, and fit selections.',
+        editorialStory: 'Available for wedding, reception, and formal occasion commissions at our Bengaluru showroom.',
+        craftsmanshipNotes: [{ title: 'Custom Ceremonial Fit', description: 'Individually fitted for comfort, structure, and an elegant occasionwear silhouette.' }],
+        construction: 'Structured Ceremonial Canvas',
+        handworkHours: 56,
+        leadTimeWeeks: 4,
+        availableFabricsCount: 28,
+        heroImage: { id: `img-${slug}`, url: `/images/products/${fileName}`, alt: name, isPrimary: true, aspectRatio: 'portrait' },
+        galleryImages: [],
+        tags: ['Sherwanis', 'Traditional Occasionwear', 'Made-to-Measure', 'Custom Fitting'],
+        isFeatured: true,
+        isSignatureHeritage: true,
+        inDigitalShowroom: false,
+      } satisfies Product,
+    ])
+  );
+}
+
 export const STATIC_PRODUCTS: Record<string, Product> = {
   // 1. Suits & Blazers with 3D model
   'bespoke-suits-model-one': {
@@ -58,7 +100,7 @@ export const STATIC_PRODUCTS: Record<string, Product> = {
         alt: 'Tailoring drape profile',
       },
     ],
-    tags: ['Suits & Blazers', 'Full Canvas', 'Double Breasted', '3D Interactive'],
+    tags: ['Suits & Blazers', 'Full Canvas', 'Double Breasted'],
     isFeatured: true,
     isSignatureHeritage: true,
     inDigitalShowroom: true,
@@ -589,6 +631,7 @@ export const STATIC_PRODUCTS: Record<string, Product> = {
     isSignatureHeritage: false,
     inDigitalShowroom: false,
   },
+  ...createSherwaniLookbookProducts(),
 };
 
 /**

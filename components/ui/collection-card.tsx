@@ -31,12 +31,18 @@ export function CollectionCard({
   aspectRatioClass,
 }: CollectionCardProps) {
   const is3DReady = slug === 'suits-blazers' || slug === 'bespoke-suits';
+  const destination =
+    slug === 'corporate-uniforms'
+      ? '/corporate'
+      : slug === 'fabrics'
+      ? '/fabrics'
+      : `/collections/${slug}`;
 
   const isHorizontal = orientation === 'horizontal';
 
   return (
     <Link
-      href={`/collections/${slug}`}
+      href={destination}
       className={cn(
         'group flex overflow-hidden rounded-3xl border border-border bg-surface shadow-soft transition-all duration-300 hover:shadow-soft-lg hover:border-forest/40 dark:hover:border-sage/40',
         isHorizontal ? 'flex-col md:flex-row md:items-stretch' : 'flex-col',

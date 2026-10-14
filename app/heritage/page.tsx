@@ -120,7 +120,7 @@ export default function HeritagePage() {
             </h3>
 
             <p className="text-xs sm:text-sm text-muted font-sans leading-relaxed mb-4">
-              Continuing its operational commitment to textile retail, wholesale fabrics, made-to-measure tailoring, and corporate workplace uniform supply, Selection Textiles presents its offerings through a polished digital showroom with 3D garment visualization.
+              Continuing its operational commitment to textile retail, wholesale fabrics, made-to-measure tailoring, and corporate workplace uniform supply, Selection Textiles presents its offerings through a polished digital showroom and bespoke appointment experience.
             </p>
 
             <div className="p-4 rounded-xl border border-border bg-surface text-xs font-sans text-muted flex items-center gap-3">

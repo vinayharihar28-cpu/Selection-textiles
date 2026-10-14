@@ -10,7 +10,7 @@ import { BackButton } from '@/components/ui/back-button';
 import { CheckCircle2, Eye, ArrowUpRight } from 'lucide-react';
 import { getCollectionBySlug } from '@/lib/data/collections';
 import { STATIC_PRODUCTS } from '@/lib/data/products';
-import { Collection3DStudio } from '@/components/collections/Collection3DStudio';
+import { redirect } from 'next/navigation';
 
 interface Props {
   params: {
@@ -35,6 +35,15 @@ export function generateMetadata({ params }: Props) {
 
 export default function CollectionSlugPage({ params }: Props) {
   const { slug } = params;
+
+  // Corporate Uniforms is a full 11-category catalogue with its own dedicated page.
+  if (slug === 'corporate-uniforms' || slug === 'corporate' || slug === 'workplace-uniforms') {
+    redirect('/corporate');
+  }
+  if (slug === 'fabrics' || slug === 'textile-archives' || slug === 'mill-fabrics') {
+    redirect('/fabrics');
+  }
+
   const collection = getCollectionBySlug(slug);
 
   const title = collection
@@ -53,11 +62,6 @@ export default function CollectionSlugPage({ params }: Props) {
     'Custom Fitting',
     'Bengaluru Showroom',
   ];
-
-  const is3DCollection =
-    slug === 'suits-blazers' ||
-    slug === 'bespoke-suits' ||
-    slug === 'tailored-blazers';
 
   // Match products for this collection
   const allProducts = Object.values(STATIC_PRODUCTS);
@@ -145,14 +149,6 @@ export default function CollectionSlugPage({ params }: Props) {
                     Enquire About {title}
                   </Button>
                 </Link>
-                {is3DCollection && (
-                  <a href="#3d-studio">
-                    <Button variant="outline" size="md" className="gap-2 border-accent/60 text-accent hover:bg-accent/10">
-                      <Eye className="w-4 h-4 text-accent" />
-                      <span>Explore in 3D Studio</span>
-                    </Button>
-                  </a>
-                )}
                 <Link href="/tailoring">
                   <Button variant="ghost" size="md">
                     Tailoring Consultation
@@ -249,19 +245,6 @@ export default function CollectionSlugPage({ params }: Props) {
         </Container>
       </div>
 
-      {/* Embedded 3D Studio (Directly on Coats, Suits & Blazers, Sherwanis) */}
-      {is3DCollection && (
-        <div id="3d-studio">
-          <Container size="wide">
-            <Collection3DStudio
-              collectionTitle={title}
-              collectionSlug={slug}
-              products={matchingProducts}
-            />
-          </Container>
-        </div>
-      )}
-
       {/* Available Silhouettes / Products */}
       <Section variant="default">
         <div className="flex items-center justify-between mb-8 pb-3 border-b border-border">
@@ -283,7 +266,7 @@ export default function CollectionSlugPage({ params }: Props) {
                 category={garment.category.replace(/_/g, ' ')}
                 division={garment.division}
                 fabricSummary={garment.subtitle}
-                craftsmanshipTag={garment.modelUrl ? '3D Interactive • ' + garment.construction : garment.construction}
+                craftsmanshipTag={garment.construction}
                 priceDisplay={garment.price.formattedDisplay}
                 imageUrl={garment.heroImage.url}
               />

@@ -21,7 +21,7 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
   { label: 'Tailoring', href: '/tailoring' },
   { label: 'Corporate', href: '/corporate' },
   { label: 'Fabrics', href: '/fabrics' },
-  { label: 'Heritage', href: '/heritage' },
+  { label: 'About Us', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -48,8 +48,8 @@ export function MobileNavigation({
               <Image
                 src="/images/Logo/Logo.png"
                 alt="Selection Textiles"
-                width={2172}
-                height={724}
+                width={2067}
+                height={761}
                 priority
                 className="h-11 w-auto object-contain"
               />
@@ -130,7 +130,7 @@ export function MobileNavigation({
             <p>#16-17, &ldquo;D.Rangaiah Complex&rdquo; – 560053</p>
             <p className="flex items-center gap-1 mt-0.5">
               <Phone className="w-3 h-3 text-accent" />
-              +91-98446 75222 / 080-22258982
+              +91-86604 51300 / 080-22258982 / 080-41264992
             </p>
           </div>
         </div>

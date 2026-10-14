@@ -305,7 +305,7 @@ function ContactFormInner() {
                 required
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                placeholder="+91-98446 75222"
+                placeholder="+91-86604 51300"
                 className="h-11 px-4 text-xs bg-surface-muted border border-border rounded-lg text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent/50"
               />
             </div>
@@ -433,21 +433,28 @@ export default function ContactPage() {
                 <Phone className="w-4 h-4 text-accent shrink-0 mt-0.5" />
                 <div>
                   <p className="font-medium text-foreground">Telephone Contact</p>
-                  <p className="text-muted mt-0.5">Mobile: +91-98446 75222</p>
-                  <p className="text-muted">Landline: +91-080-22258982</p>
-                  <div className="flex items-center gap-3 mt-2">
+                  <p className="text-muted mt-0.5">Mobile: +91-86604 51300</p>
+                  <p className="text-muted">Landline: 080-22258982 / 080-41264992</p>
+                  <div className="flex flex-wrap items-center gap-3 mt-2">
                     <a
-                      href="tel:+919844675222"
+                      href="tel:+918660451300"
                       className="inline-flex items-center gap-1 text-accent text-[11px] font-medium hover:underline"
                     >
-                      <span>Call Mobile</span>
+                      <span>Call +91-86604 51300</span>
                       <ArrowUpRight className="w-3 h-3" />
                     </a>
                     <a
                       href="tel:+9108022258982"
                       className="inline-flex items-center gap-1 text-accent text-[11px] font-medium hover:underline"
                     >
-                      <span>Call Landline</span>
+                      <span>Call 080-22258982</span>
+                      <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                    <a
+                      href="tel:+9108041264992"
+                      className="inline-flex items-center gap-1 text-accent text-[11px] font-medium hover:underline"
+                    >
+                      <span>Call 080-41264992</span>
                       <ArrowUpRight className="w-3 h-3" />
                     </a>
                   </div>
@@ -479,7 +486,7 @@ export default function ContactPage() {
               </span>
               <div className="grid grid-cols-2 gap-2 text-xs">
                 <a
-                  href="tel:+919844675222"
+                  href="tel:+918660451300"
                   className="p-2.5 rounded-lg border border-border bg-surface text-center font-medium hover:border-accent transition-colors"
                 >
                   Call Now
@@ -544,7 +551,7 @@ export default function ContactPage() {
                 <ArrowUpRight className="w-3 h-3 ml-0.5" />
               </a>
               <a
-                href="tel:+919844675222"
+                href="tel:+918660451300"
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-border bg-surface text-xs font-sans font-medium text-foreground hover:bg-surface-muted transition-colors"
               >
                 <Phone className="w-3.5 h-3.5 text-accent" />

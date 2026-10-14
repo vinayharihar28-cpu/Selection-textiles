@@ -19,6 +19,7 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import { VISUAL_ASSETS } from '@/lib/data/assets';
+import { CorporateEnquiryForm } from '@/components/corporate/CorporateEnquiryForm';
 
 export const metadata = {
   title: 'Corporate Uniform Collection & Workplace Outfitting | Selection Textiles',
@@ -287,9 +288,61 @@ export default function CorporatePage() {
           })}
         </div>
 
+        {/* Executive Decision-Maker Summary (5 Key Questions) */}
+        <div className="mt-14 p-8 sm:p-12 rounded-[2.5rem] bg-surface dark:bg-[#141F1A] border border-border/80 dark:border-white/10 shadow-soft-lg">
+          <Badge variant="accent" size="sm" className="mb-2 bg-forest text-ivory dark:bg-sage dark:text-forest-dark">
+            For HR, Admin & Procurement Leads
+          </Badge>
+          <h3 className="font-serif text-2xl sm:text-3xl text-foreground font-normal mb-8">
+            Essential Questions Answered for Decision-Makers
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 text-xs font-sans">
+            <div className="p-5 rounded-2xl bg-surface-muted/60 dark:bg-black/20 border border-border/60">
+              <p className="font-semibold text-foreground text-sm flex items-center gap-2 mb-1.5">
+                <CheckCircle2 className="w-4 h-4 text-forest dark:text-sage" />
+                <span>What types of uniforms do we supply?</span>
+              </p>
+              <p className="text-muted leading-relaxed">
+                We supply 11 full categories: executive suits, formal shirts & trousers with computerized embroidery, piqué polo tees, round-neck cotton t-shirts, winter hoodies, chef coats, housekeeping tunics, security guard uniforms, lab coats, and technician boiler suits.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-surface-muted/60 dark:bg-black/20 border border-border/60">
+              <p className="font-semibold text-foreground text-sm flex items-center gap-2 mb-1.5">
+                <CheckCircle2 className="w-4 h-4 text-forest dark:text-sage" />
+                <span>Which industries do we serve?</span>
+              </p>
+              <p className="text-muted leading-relaxed">
+                Corporate headquarters, retail sales forces, security agencies, hospitality and commercial kitchens, private hospitals and diagnostic labs, automotive service networks, manufacturing plants, and educational institutions.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-surface-muted/60 dark:bg-black/20 border border-border/60">
+              <p className="font-semibold text-foreground text-sm flex items-center gap-2 mb-1.5">
+                <CheckCircle2 className="w-4 h-4 text-forest dark:text-sage" />
+                <span>Can uniforms be customized with brand identity?</span>
+              </p>
+              <p className="text-muted leading-relaxed">
+                Yes. We apply high-density computerized embroidery and durable colorfast printing matching your exact corporate pantone colors, along with custom piping, epaulettes, and branded neck tags.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-surface-muted/60 dark:bg-black/20 border border-border/60">
+              <p className="font-semibold text-foreground text-sm flex items-center gap-2 mb-1.5">
+                <CheckCircle2 className="w-4 h-4 text-forest dark:text-sage" />
+                <span>How are fabrics and sizing selected?</span>
+              </p>
+              <p className="text-muted leading-relaxed">
+                Fabrics are tested for abrasion resistance, crease recovery, and commercial wash endurance. Sizing is offered in standardized runs (S to 5XL) or via in-person master tailor measurement sessions for leadership staff.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Corporate Workflow / Uniform Program */}
-        <div className="mt-14 p-8 sm:p-10 rounded-3xl border border-border bg-surface-muted shadow-soft">
-          <Badge variant="accent" size="sm" className="mb-2">
+        <div className="mt-12 p-8 sm:p-10 rounded-3xl border border-border bg-surface-muted dark:bg-[#121B16] shadow-soft">
+          <Badge variant="subtle" size="sm" className="mb-2">
             Uniform Supply Methodology
           </Badge>
           <h3 className="font-serif text-2xl sm:text-3xl text-foreground font-normal mb-6">
@@ -297,29 +350,29 @@ export default function CorporatePage() {
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-xs font-sans">
-            <div className="p-4 rounded-xl border border-border bg-surface">
-              <span className="font-serif text-lg text-accent block mb-1">Step 1</span>
+            <div className="p-4 rounded-xl border border-border bg-surface dark:bg-[#16221D]">
+              <span className="font-serif text-lg text-forest dark:text-sage block mb-1">Step 1</span>
               <p className="font-medium text-foreground">Requirement Brief</p>
               <p className="text-muted mt-1 leading-relaxed">
                 Consultation on staff roles, fabric durability needs, corporate brand colors, and volume requirements.
               </p>
             </div>
-            <div className="p-4 rounded-xl border border-border bg-surface">
-              <span className="font-serif text-lg text-accent block mb-1">Step 2</span>
+            <div className="p-4 rounded-xl border border-border bg-surface dark:bg-[#16221D]">
+              <span className="font-serif text-lg text-forest dark:text-sage block mb-1">Step 2</span>
               <p className="font-medium text-foreground">Fabric & Swatch Selection</p>
               <p className="text-muted mt-1 leading-relaxed">
                 Presentation of mill cloths tested for wash fastness, tensile resilience, and comfortable breathability.
               </p>
             </div>
-            <div className="p-4 rounded-xl border border-border bg-surface">
-              <span className="font-serif text-lg text-accent block mb-1">Step 3</span>
+            <div className="p-4 rounded-xl border border-border bg-surface dark:bg-[#16221D]">
+              <span className="font-serif text-lg text-forest dark:text-sage block mb-1">Step 3</span>
               <p className="font-medium text-foreground">Prototype Sampling & Sizing</p>
               <p className="text-muted mt-1 leading-relaxed">
                 Sample garments produced with logo embroidery for corporate management review and size approval.
               </p>
             </div>
-            <div className="p-4 rounded-xl border border-border bg-surface">
-              <span className="font-serif text-lg text-accent block mb-1">Step 4</span>
+            <div className="p-4 rounded-xl border border-border bg-surface dark:bg-[#16221D]">
+              <span className="font-serif text-lg text-forest dark:text-sage block mb-1">Step 4</span>
               <p className="font-medium text-foreground">Wholesale Delivery</p>
               <p className="text-muted mt-1 leading-relaxed">
                 Quality-inspected batch fulfillment dispatched on schedule to your workplace or institutional facility.
@@ -328,22 +381,9 @@ export default function CorporatePage() {
           </div>
         </div>
 
-        {/* Bottom CTA Banner */}
-        <div className="mt-12 p-8 sm:p-10 rounded-3xl border border-border bg-surface flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-soft">
-          <div>
-            <h4 className="font-serif text-2xl text-foreground font-normal">
-              Discuss Your Uniform Requirement
-            </h4>
-            <p className="text-xs text-muted font-sans mt-1">
-              Connect directly with our corporate team in Bengaluru for custom sample sets and bulk quotes.
-            </p>
-          </div>
-          <Link href="/contact" className="shrink-0 w-full sm:w-auto">
-            <Button variant="primary" size="md" className="w-full sm:w-auto gap-2">
-              <span>Request a Corporate Quote</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </Button>
-          </Link>
+        {/* Embedded Corporate Quotation Enquiry Form */}
+        <div className="mt-14 max-w-4xl mx-auto">
+          <CorporateEnquiryForm />
         </div>
       </Section>
     </div>
